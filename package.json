@@ -1,6 +1,6 @@
 {
   "name": "artbase",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "main": "./lib/index.js",
   "scripts": {
     "build": "tsc -p ."
