@@ -1,0 +1,14 @@
+{
+  "name": "artbase",
+  "version": "0.0.1-beta",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "keywords": [],
+  "author": "Arthur",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}
