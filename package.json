@@ -4,7 +4,8 @@
   "main": "./lib/index.js",
   "scripts": {
     "build": "tsc -p .",
-    "ts-check": "tsc -p . --noEmit"
+    "ts-check": "tsc -p . --noEmit",
+    "lint": "eslint -c .eslintrc src/**/**/*.ts --fix --ext .ts"
   },
   "bugs": {
     "url": "https://github.com/arthurvanl/artbase/issues"
@@ -18,6 +19,8 @@
   "author": "Arthur",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "eslint": "^8.27.0"
   }
 }
