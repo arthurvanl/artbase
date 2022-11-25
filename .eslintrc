@@ -1,0 +1,25 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es2022": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module",
+        "project": [
+            "./tsconfig.json"
+        ]
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
+}

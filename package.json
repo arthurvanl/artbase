@@ -1,14 +1,26 @@
 {
   "name": "artbase",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "ts-check": "tsc -p . --noEmit",
+    "lint": "eslint -c .eslintrc src/**/**/*.ts --fix --ext .ts"
   },
+  "bugs": {
+    "url": "https://github.com/arthurvanl/artbase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurvanl/artbase.git"
+  },
+  "homepage": "https://github.com/arthurvanl/artbase",
   "keywords": [],
   "author": "Arthur",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "eslint": "^8.27.0"
   }
 }
