@@ -3,8 +3,17 @@
   "version": "0.0.2-beta",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "ts-check": "tsc -p . --noEmit"
   },
+  "bugs": {
+    "url": "https://github.com/arthurvanl/artbase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurvanl/artbase.git"
+  },
+  "homepage": "https://github.com/arthurvanl/artbase",
   "keywords": [],
   "author": "Arthur",
   "license": "MIT",
