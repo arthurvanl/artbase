@@ -33,12 +33,15 @@ jobs:
   release:
     name: 🚀 Publish
     needs: check
-    - name: 📥 Checkout
-      uses: actions/checkout@v3
-    - name: 🟢 Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    run: npm publish --access public
-    env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    runs-on: ubuntu-latest
+    steps: 
+      - name: 📥 Checkout
+        uses: actions/checkout@v3
+      - name: 🟢 Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: 🚀 Publish
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
