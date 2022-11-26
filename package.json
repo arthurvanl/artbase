@@ -1,6 +1,6 @@
 {
   "name": "artbase",
-  "version": "0.0.8-beta.1",
+  "version": "0.0.8-beta.2",
   "description": "A test package for learning how to publish a package to npm",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
