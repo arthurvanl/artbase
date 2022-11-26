@@ -1,12 +1,16 @@
 {
   "name": "artbase",
-  "version": "0.0.2-beta",
+  "version": "0.0.3-beta",
   "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],	
   "scripts": {
     "build": "tsc -p .",
     "ts-check": "tsc -p . --noEmit",
     "lint": "eslint -c .eslintrc src/**/**/*.ts --fix --ext .ts"
   },
+  "prepublish": "npm run build",
   "bugs": {
     "url": "https://github.com/arthurvanl/artbase/issues"
   },
