@@ -4,6 +4,7 @@
   "description": "A test package for learning how to publish a package to npm",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "files": [
     "lib/*"
   ],
