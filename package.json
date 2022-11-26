@@ -1,12 +1,19 @@
 {
   "name": "artbase",
-  "version": "0.0.6-beta",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
-  "files": [ "src" ],
+  "version": "0.0.7-beta",
+  "description": "A test package for learning how to publish a package to npm",
+  "main": "./lib/index.js",
+	"module": "./lib/index.mjs",
+	"typings": "./lib/index.d.ts",
+	"exports": {
+		"import": "./lib/index.mjs",
+		"require": "./lib/index.js",
+		"types": "./lib/index.d.ts"
+	},
   "directories": {
     "lib": "src"
   },
+  "files": ["lib"],
   "scripts": {
     "build": "tsc -p .",
     "ts-check": "tsc -p . --noEmit",
