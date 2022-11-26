@@ -1,21 +1,14 @@
 {
   "name": "artbase",
-  "version": "0.0.8-beta.2",
-  "description": "A test package for learning how to publish a package to npm",
+  "version": "0.0.8-beta.4",
+  "description": "A package that connects with a mysql database.",
   "main": "lib/index.js",
-  "types": "lib/types/index.d.ts",
   "type": "module",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
+  "files": [ "lib", "types", "!lib/**/*.map", "!lib/**/*.ts" ],
   "scripts": {
-    "build": "tsc -p .",
-    "ts-check": "tsc -p . --noEmit",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint",
-    "preversion": "npm run lint",
-    "lint": "eslint -c .eslintrc src/**/**/*.ts --fix --ext .ts"
+    "build": "tsc",
+    "lint": "eslint -c .eslintrc src/**/**/*.ts --fix --ext .ts",
+    "turbo:build": "npx turbo build lint"
   },
   "bugs": {
     "url": "https://github.com/arthurvanl/artbase/issues"
@@ -32,6 +25,7 @@
     "@types/mysql": "^2.15.21",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "eslint": "^8.27.0",
+    "turbo": "^1.6.3",
     "typescript": "^4.9.3"
   },
   "dependencies": {
