@@ -7,7 +7,6 @@
         "resolveJsonModule": true,
         "outDir": "lib",
         "strict": true,
-
 		"declarationMap": true,
 		"importHelpers": true,
 		"importsNotUsedAsValues": "error",
