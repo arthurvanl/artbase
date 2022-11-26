@@ -1,11 +1,9 @@
 {
   "name": "artbase",
-  "version": "0.0.4-beta",
-  "main": "./lib/index.js",
+  "version": "0.0.5-beta",
+  "main": "lib/index.js",
   "type": "module",
-  "files": [
-    "lib"
-  ],	
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "ts-check": "tsc -p . --noEmit",
