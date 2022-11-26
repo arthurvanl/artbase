@@ -5,9 +5,9 @@
         "declaration": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
+        "rootDir": "src",
         "outDir": "lib",
         "strict": true,
-
 		"declarationMap": true,
 		"importHelpers": true,
 		"importsNotUsedAsValues": "error",
@@ -20,9 +20,7 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
     },
-    "include": [
-        "src"
-    ],
+    "include": ["src"], 
     "exclude": [
         "node_modules",
         "**/__tests__/*"
