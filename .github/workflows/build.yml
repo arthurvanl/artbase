@@ -22,7 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: 📦 Install dependencies
         run: npm ci
-      - name: ✅ Check
-        run: npm run ts-check
-      - name: 🎨 Lint
-        run: npm run lint
+      - name: ✅ Turbo script
+        run: npm run turbo:build

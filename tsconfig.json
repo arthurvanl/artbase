@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
         "module": "ESNext",
-        "declaration": true,
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM"],
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "rootDir": "src",
         "outDir": "lib",
+        "declaration": true,
         "strict": true,
-		"declarationMap": true,
 		"importHelpers": true,
 		"importsNotUsedAsValues": "error",
 		"inlineSources": true,
@@ -19,10 +19,8 @@
 		"sourceMap": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
+        
     },
     "include": ["src"], 
-    "exclude": [
-        "node_modules",
-        "**/__tests__/*"
-    ]
+    "exclude": [ "node_modules", "types" ],
 }
