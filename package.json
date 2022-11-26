@@ -3,10 +3,11 @@
   "version": "0.0.8-beta.2",
   "description": "A test package for learning how to publish a package to npm",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/types/index.d.ts",
   "type": "module",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "scripts": {
     "build": "tsc -p .",
@@ -28,8 +29,12 @@
   "author": "Arthur",
   "license": "MIT",
   "devDependencies": {
+    "@types/mysql": "^2.15.21",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "eslint": "^8.27.0",
     "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
   }
 }
