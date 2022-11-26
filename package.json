@@ -1,7 +1,8 @@
 {
   "name": "artbase",
-  "version": "0.0.3-beta",
+  "version": "0.0.4-beta",
   "main": "./lib/index.js",
+  "type": "module",
   "files": [
     "lib"
   ],	
