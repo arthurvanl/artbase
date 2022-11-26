@@ -1,31 +1,30 @@
 {
     "compilerOptions": {
-        "lib": ["ESNext"],
         "target": "ESNext",
         "module": "ESNext",
-        "rootDir": "./src/",
-        "outDir": "./lib/",
-        "strict": true,
-        "moduleResolution": "node",
         "declaration": true,
-        "declarationMap": true,
-        "importHelpers": true,
-        "experimentalDecorators": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
         "resolveJsonModule": true,
-        "forceConsistentCasingInFileNames": true,
-        "removeComments": true,
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "sourceMap": true,
-        "baseUrl": "./"
+        "outDir": "lib",
+        "strict": true,
+
+		"declarationMap": true,
+		"importHelpers": true,
+		"importsNotUsedAsValues": "error",
+		"inlineSources": true,
+		"newLine": "lf",
+		"noEmitHelpers": true,
+		"preserveConstEnums": true,
+		"removeComments": false,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
     },
-    "include": [ "src" ],
+    "include": [
+        "src"
+    ],
     "exclude": [
         "node_modules",
-        "dist"
-    ],
-} 
+        "**/__tests__/*"
+    ]
+}
