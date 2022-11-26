@@ -38,6 +38,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
+      - name: ✅ Turbo script
+        run: npm run turbo:build
       - name: 🚀 Publish
         run: npm ci && npm publish
         env:
