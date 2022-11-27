@@ -2,7 +2,7 @@ import { createPool, OkPacket, Pool } from 'mysql';
 import { getTime } from './utils/time.js';
 import { beautifyError } from './utils/error.js';
 
-import type { ArtBaseOptions, DatabaseQueryResponse } from '../types/index.js';
+import type { ArtBaseOptions, DatabaseQueryResponse, Selector } from '../types/index.js';
 
 export default class ArtBase {
     public pool: Pool;
@@ -28,7 +28,8 @@ export default class ArtBase {
 		});
 
 		// simple debug function to get a lil more info about the pool
-		this.debug();
+		if(options.debug == true)
+			this.debug();
 	}
 
     private debug() {
@@ -45,6 +46,9 @@ export default class ArtBase {
 		});
 	}
 
+	/**
+	 * Direct sql query to the server.
+	 */
     async query(query: string, values?: any): Promise<DatabaseQueryResponse> {
 		const conn = this.pool;
 
@@ -57,6 +61,12 @@ export default class ArtBase {
 		});
 	}
 
+	/**
+	 * Insert into a table
+	 * @example
+	 * let user = await db.insert<T>({name: "Arthur", email: "arthur@example.com" }, 'user')
+	 * // returns false | OkPacket
+	 */
 	async insert<T>(columns: Partial<T>, table: string): Promise<false | OkPacket> {
 		const query = await this.query(`INSERT INTO \`${table}\` ${this.parseObj(columns, 'INSERT')}`);
 		if (query.error) return false;
@@ -64,15 +74,41 @@ export default class ArtBase {
 		return query.results;
 	}
 
-	async select<T>(select: [keyof T] | null, where: Partial<T> | null, table: string): Promise<false | Array<T>> {
-		const query = await this.query(
-			`SELECT ${this.parseObj(select, 'SELECT')} FROM \`${table}\` WHERE ${this.parseObj(where, 'WHERE')}`
-		);
-		if (query.error) return false;
+	/**
+	 * Select columns from a table
+	 * @example
+	 * let user = await db.select<T>(null, {id: 9 }, 'user')
+	 * // returns false | Array<T>
+	 * 
+	 * // the first param can be used if you only want specific columns returned from the database.
+	 * let user = await db.select<T>(['name', 'email'], {id: 9 }, 'user')
+	 * // returns false | Array<T>
+	 */
 
-		return query.results;
+	async select<T>(select: Array<keyof T> | null, where: Partial<T> | null, table: string) {
+		return await this.createSelector<T>()(select, where, table);
 	}
 
+	createSelector<T>(): Selector<T> {
+
+		return async (select, where, table) => {
+
+			const query = await this.query(
+				`SELECT ${this.parseObj(select, 'SELECT')} FROM \`${table}\` WHERE ${this.parseObj(where, 'WHERE')}`
+				);
+			
+			if(query.error) return false;
+
+			return query.results as any;
+		}
+	}
+
+	/**
+	 * Update columns in a table
+	 * @example
+	 * let user = await db.update<T>({name: "Artbase"}, {id: 9 }, 'user')
+	 * // returns false | OkPacket
+	 */
 	async update<T>(columns: Partial<T>, where: Partial<T>, table: string): Promise<false | OkPacket> {
 		const query = await this.query(
 			`UPDATE \`${table}\` SET ${this.parseObj(columns, 'UPDATE')} WHERE ${this.parseObj(where, 'WHERE')}`
@@ -82,6 +118,12 @@ export default class ArtBase {
 		return query.results;
 	}
 
+	/**
+	 * Delete colums from a table
+	 * @example
+	 * let user = await db.delete<T>({id: 9}, 'user')
+	 * // returns false | OkPacket
+	 */
 	async delete<T>(where: Partial<T>, table: string): Promise<false | OkPacket> {
 		const query = await this.query(`DELETE FROM \`${table}\` WHERE ${this.parseObj(where, 'WHERE')}`);
 		if (query.error) return false;
