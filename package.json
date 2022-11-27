@@ -4,11 +4,12 @@
   "description": "A package that connects with a mysql database.",
   "main": "lib/index.js",
   "type": "module",
-  "files": [ "lib", "types", "!lib/**/*.map", "!lib/**/*.ts" ],
+  "files": [ "lib", "types", "!lib/**/*.map", "!lib/**/*.ts", "lib/index.d.ts" ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint -c .eslintrc src/**/**/*.ts --fix --ext .ts",
-    "turbo:build": "npx turbo build lint"
+    "turbo:build": "npx turbo build lint",
+    "test": "ts-node-esm test/index.ts"
   },
   "bugs": {
     "url": "https://github.com/arthurvanl/artbase/issues"
