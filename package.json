@@ -1,6 +1,6 @@
 {
   "name": "artbase",
-  "version": "0.0.8-beta.4.2",
+  "version": "0.0.9-beta",
   "description": "A package that connects with a mysql database.",
   "main": "lib/index.js",
   "type": "module",
