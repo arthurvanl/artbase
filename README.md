@@ -1,4 +1,5 @@
 [![.github/workflows/publish.yml](https://github.com/arthurvanl/artbase/actions/workflows/publish.yml/badge.svg?branch=master)](https://github.com/arthurvanl/artbase/actions/workflows/publish.yml)
+[![.github/workflows/build.yml](https://github.com/arthurvanl/artbase/actions/workflows/build.yml/badge.svg)](https://github.com/arthurvanl/artbase/actions/workflows/build.yml)
 
 # [Artbase](https://npmjs.com/package/artbase)
 
