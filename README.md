@@ -3,7 +3,7 @@
 
 # [Artbase](https://npmjs.com/package/artbase)
 
-Artbase makes it easier to write sql queries in javascript.
+Artbase makes it easier to write sql queries in javascript & typescript.
 You can use it to write queries in a more readable way, and to write queries that are easier to maintain.
 
 # Table of contents
